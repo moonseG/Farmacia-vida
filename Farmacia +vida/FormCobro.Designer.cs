@@ -38,11 +38,14 @@
             this.LabelMostrar = new System.Windows.Forms.Label();
             this.BContinuar = new System.Windows.Forms.Button();
             this.labelCambio = new System.Windows.Forms.Label();
-            this.textPagar = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.BFinalizar = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.textPagar = new System.Windows.Forms.TextBox();
+            this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +56,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(770, 43);
+            this.panel1.Size = new System.Drawing.Size(806, 43);
             this.panel1.TabIndex = 8;
             // 
             // label2
@@ -82,7 +85,7 @@
             // 
             this.MontoPagar.AutoSize = true;
             this.MontoPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.MontoPagar.Location = new System.Drawing.Point(346, 217);
+            this.MontoPagar.Location = new System.Drawing.Point(396, 217);
             this.MontoPagar.Name = "MontoPagar";
             this.MontoPagar.Size = new System.Drawing.Size(118, 20);
             this.MontoPagar.TabIndex = 10;
@@ -92,7 +95,7 @@
             // 
             this.MontoRecibido.AutoSize = true;
             this.MontoRecibido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.MontoRecibido.Location = new System.Drawing.Point(346, 266);
+            this.MontoRecibido.Location = new System.Drawing.Point(396, 263);
             this.MontoRecibido.Name = "MontoRecibido";
             this.MontoRecibido.Size = new System.Drawing.Size(125, 20);
             this.MontoRecibido.TabIndex = 12;
@@ -102,7 +105,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label6.Location = new System.Drawing.Point(395, 323);
+            this.label6.Location = new System.Drawing.Point(396, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 13;
@@ -112,7 +115,7 @@
             // textRecibido
             // 
             this.textRecibido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.textRecibido.Location = new System.Drawing.Point(487, 263);
+            this.textRecibido.Location = new System.Drawing.Point(545, 263);
             this.textRecibido.Name = "textRecibido";
             this.textRecibido.Size = new System.Drawing.Size(100, 27);
             this.textRecibido.TabIndex = 15;
@@ -131,7 +134,7 @@
             // BContinuar
             // 
             this.BContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.BContinuar.Location = new System.Drawing.Point(622, 256);
+            this.BContinuar.Location = new System.Drawing.Point(664, 256);
             this.BContinuar.Name = "BContinuar";
             this.BContinuar.Size = new System.Drawing.Size(105, 34);
             this.BContinuar.TabIndex = 20;
@@ -143,18 +146,11 @@
             // 
             this.labelCambio.AutoSize = true;
             this.labelCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.labelCambio.Location = new System.Drawing.Point(510, 323);
+            this.labelCambio.Location = new System.Drawing.Point(558, 323);
             this.labelCambio.Name = "labelCambio";
             this.labelCambio.Size = new System.Drawing.Size(31, 20);
             this.labelCambio.TabIndex = 21;
             this.labelCambio.Text = "0.0";
-            // 
-            // textPagar
-            // 
-            this.textPagar.Location = new System.Drawing.Point(486, 215);
-            this.textPagar.Name = "textPagar";
-            this.textPagar.Size = new System.Drawing.Size(101, 22);
-            this.textPagar.TabIndex = 23;
             // 
             // btnRegresar
             // 
@@ -176,7 +172,7 @@
             this.BFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.BFinalizar.Image = global::Farmacia__vida.Properties.Resources.terminado;
             this.BFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BFinalizar.Location = new System.Drawing.Point(605, 376);
+            this.BFinalizar.Location = new System.Drawing.Point(647, 376);
             this.BFinalizar.Name = "BFinalizar";
             this.BFinalizar.Size = new System.Drawing.Size(122, 56);
             this.BFinalizar.TabIndex = 19;
@@ -185,21 +181,50 @@
             this.BFinalizar.UseVisualStyleBackColor = true;
             this.BFinalizar.Click += new System.EventHandler(this.BFinalizar_Click);
             // 
-            // hScrollBar1
+            // textPagar
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(730, 77);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(80, 355);
-            this.hScrollBar1.TabIndex = 25;
+            this.textPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.textPagar.Location = new System.Drawing.Point(545, 217);
+            this.textPagar.Name = "textPagar";
+            this.textPagar.Size = new System.Drawing.Size(100, 27);
+            this.textPagar.TabIndex = 26;
+            this.textPagar.TextChanged += new System.EventHandler(this.textPagar_TextChanged);
+            // 
+            // dataGridViewProductos
+            // 
+            this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Precio});
+            this.dataGridViewProductos.Location = new System.Drawing.Point(30, 136);
+            this.dataGridViewProductos.Name = "dataGridViewProductos";
+            this.dataGridViewProductos.RowHeadersWidth = 51;
+            this.dataGridViewProductos.RowTemplate.Height = 24;
+            this.dataGridViewProductos.Size = new System.Drawing.Size(310, 207);
+            this.dataGridViewProductos.TabIndex = 27;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
             // 
             // FormCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 459);
-            this.Controls.Add(this.hScrollBar1);
-            this.Controls.Add(this.btnRegresar);
+            this.ClientSize = new System.Drawing.Size(806, 460);
+            this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.textPagar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.labelCambio);
             this.Controls.Add(this.BContinuar);
             this.Controls.Add(this.BFinalizar);
@@ -215,6 +240,7 @@
             this.Load += new System.EventHandler(this.FormCobro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,8 +259,10 @@
         private System.Windows.Forms.Button BFinalizar;
         private System.Windows.Forms.Button BContinuar;
         private System.Windows.Forms.Label labelCambio;
-        private System.Windows.Forms.TextBox textPagar;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
+        private System.Windows.Forms.TextBox textPagar;
+        private System.Windows.Forms.DataGridView dataGridViewProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

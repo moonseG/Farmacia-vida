@@ -173,6 +173,16 @@ namespace Farmacia__vida.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagen_de_WhatsApp_2024_11_12_a_las_07_59_02_23c649c5 {
+            get {
+                object obj = ResourceManager.GetObject("Imagen de WhatsApp 2024-11-12 a las 07.59.02_23c649c5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap terminado {
             get {
                 object obj = ResourceManager.GetObject("terminado", resourceCulture);

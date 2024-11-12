@@ -69,6 +69,20 @@ namespace Farmacia__vida
         {
 
         }
+        public void SetData(List<(string Nombre, string Precio)> productos, decimal sumaTotal)
+        {
+            // Limpiar cualquier dato anterior en el DataGridView
+            dataGridViewProductos.Rows.Clear();
+
+            // Agregar cada producto a la tabla
+            foreach (var producto in productos)
+            {
+                dataGridViewProductos.Rows.Add(producto.Nombre, producto.Precio);
+            }
+
+            // Mostrar la suma total en el TextBox
+            textPagar.Text = sumaTotal.ToString("C"); // "C" muestra el valor en formato de moneda
+        }
 
         private void BContinuar_Click(object sender, EventArgs e)
         {
@@ -90,6 +104,11 @@ namespace Farmacia__vida
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Hide();
+
+        }
+
+        private void textPagar_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

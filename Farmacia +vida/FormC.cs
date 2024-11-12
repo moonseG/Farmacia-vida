@@ -21,6 +21,30 @@ namespace Farmacia__vida
             InitializeComponent();
             this.CenterToParent();
 
+            // Habilitar la selección múltiple
+            dataGridView1.MultiSelect = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+        }
+        private void CargarDatos()
+        {
+            using (MySqlConnection connection = new MySqlConnection(SqlConection))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM producto"; // Ajusta la consulta según tus necesidades
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -30,45 +54,41 @@ namespace Farmacia__vida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Instanciar el nuevo formulario
-            // FormCobro newForm = new FormCobro();
-
-            // Mostrar el formulario
-            //newForm.Show();
-
-            //string textoSeleccionado = string.Join(", ", listBox1.SelectedItems.Cast<string>());
-
-
-            // Instanciar FormCobro usando el constructor con un argumento
-            //FormCobro formCobro = new FormCobro(textoSeleccionado);
-
-            // Mostrar FormCobro
-            //formCobro.Show();
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obtener los datos de la fila seleccionada
-                string idProducto = dataGridView1.SelectedRows[0].Cells["Id_inventario"].Value.ToString();
-                string nombreProducto = dataGridView1.SelectedRows[0].Cells["Nombre_Producto"].Value.ToString();
-                string categoria = dataGridView1.SelectedRows[0].Cells["Categoría"].Value.ToString();
-                string cantidad = dataGridView1.SelectedRows[0].Cells["Cantidad"].Value.ToString();
-                string precioUnitario = dataGridView1.SelectedRows[0].Cells["Precio_Unitario"].Value.ToString();
+                // Crear una lista para almacenar el nombre y precio de los productos seleccionados
+                List<(string Nombre, string Precio)> productos = new List<(string, string)>();
+                decimal sumaTotal = 0;
 
-                // Concatenar todos los datos en un solo string
-                string datosConcatenados = $"ID Producto: {idProducto}, Nombre: {nombreProducto}, Categoría: {categoria}, Cantidad: {cantidad}, Precio: ${precioUnitario}";
+                // Recorrer todas las filas seleccionadas
+                foreach (DataGridViewRow fila in dataGridView1.SelectedRows)
+                {
+                    string nombreProducto = fila.Cells["Nombre_Producto"].Value.ToString();
+                    string precioUnitario = fila.Cells["Precio_Unitario"].Value.ToString();
 
-                // Crear una instancia del segundo formulario (Form2)
+                    if (decimal.TryParse(precioUnitario, out decimal precio))
+                    {
+                        sumaTotal += precio;
+                    }
+
+                    // Agregar el producto a la lista
+                    productos.Add((nombreProducto, precioUnitario));
+                }
+
+                // Crear una instancia del segundo formulario (FormCobro)
                 FormCobro formCobro = new FormCobro();
 
-                // Pasar los datos concatenados al segundo formulario
-                formCobro.SetData(datosConcatenados);
+                // Pasar la lista de productos al segundo formulario
+                formCobro.SetData(productos, sumaTotal);
 
-                // Abrir el segundo formulario
+                // Mostrar el segundo formulario
                 formCobro.Show();
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una fila.");
+                MessageBox.Show("Por favor, selecciona al menos una fila.");
             }
+
         }
 
         private void FormC_Load(object sender, EventArgs e)
@@ -85,7 +105,7 @@ namespace Farmacia__vida
                     conexion.Open();
 
                     // Consulta para obtener los datos de la tabla Inventario
-                    string consulta = "SELECT * FROM Inventario";
+                    string consulta = "SELECT * FROM Producto";
 
                     // Adaptador para llenar el DataTable
                     MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
@@ -132,6 +152,12 @@ namespace Farmacia__vida
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CargarDatos();
 
         }
     }

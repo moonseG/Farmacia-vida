@@ -29,27 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interfaz));
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.BCajero = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.lblReloj = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnAgregar_Cliente = new System.Windows.Forms.Button();
-            this.BtnCerrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAgregar_Cliente = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.BCajero = new System.Windows.Forms.Button();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(511, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
@@ -69,28 +60,6 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BCajero
-            // 
-            this.BCajero.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.BCajero.Image = ((System.Drawing.Image)(resources.GetObject("BCajero.Image")));
-            this.BCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCajero.Location = new System.Drawing.Point(642, 212);
-            this.BCajero.Name = "BCajero";
-            this.BCajero.Size = new System.Drawing.Size(240, 84);
-            this.BCajero.TabIndex = 7;
-            this.BCajero.Text = "Cajero";
-            this.BCajero.UseVisualStyleBackColor = true;
-            this.BCajero.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(360, 226);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 84);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // lblReloj
             // 
@@ -119,45 +88,6 @@
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
-            // btnAgregar_Cliente
-            // 
-            this.btnAgregar_Cliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar_Cliente.Image = global::Farmacia__vida.Properties.Resources.agregar_usuario;
-            this.btnAgregar_Cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar_Cliente.Location = new System.Drawing.Point(360, 351);
-            this.btnAgregar_Cliente.Name = "btnAgregar_Cliente";
-            this.btnAgregar_Cliente.Size = new System.Drawing.Size(240, 84);
-            this.btnAgregar_Cliente.TabIndex = 9;
-            this.btnAgregar_Cliente.Text = "   Agregar cliente";
-            this.btnAgregar_Cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar_Cliente.UseVisualStyleBackColor = true;
-            this.btnAgregar_Cliente.Click += new System.EventHandler(this.btnAgregar_Cliente_Click);
-            // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnCerrar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrar.ForeColor = System.Drawing.Color.Black;
-            this.BtnCerrar.Image = global::Farmacia__vida.Properties.Resources.apagar__1_1;
-            this.BtnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCerrar.Location = new System.Drawing.Point(919, 351);
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(229, 86);
-            this.BtnCerrar.TabIndex = 0;
-            this.BtnCerrar.Text = "Cerrar sesión";
-            this.BtnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnCerrar.UseVisualStyleBackColor = false;
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(395, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -177,19 +107,70 @@
             this.panel2.Size = new System.Drawing.Size(286, 629);
             this.panel2.TabIndex = 0;
             // 
+            // btnAgregar_Cliente
+            // 
+            this.btnAgregar_Cliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar_Cliente.Image = global::Farmacia__vida.Properties.Resources.agregar_usuario;
+            this.btnAgregar_Cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_Cliente.Location = new System.Drawing.Point(360, 351);
+            this.btnAgregar_Cliente.Name = "btnAgregar_Cliente";
+            this.btnAgregar_Cliente.Size = new System.Drawing.Size(240, 84);
+            this.btnAgregar_Cliente.TabIndex = 9;
+            this.btnAgregar_Cliente.Text = "   Agregar cliente";
+            this.btnAgregar_Cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar_Cliente.UseVisualStyleBackColor = true;
+            this.btnAgregar_Cliente.Click += new System.EventHandler(this.btnAgregar_Cliente_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(360, 214);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(240, 84);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Cajero";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // BCajero
+            // 
+            this.BCajero.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.BCajero.Image = ((System.Drawing.Image)(resources.GetObject("BCajero.Image")));
+            this.BCajero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCajero.Location = new System.Drawing.Point(642, 212);
+            this.BCajero.Name = "BCajero";
+            this.BCajero.Size = new System.Drawing.Size(240, 84);
+            this.BCajero.TabIndex = 7;
+            this.BCajero.Text = "Cajero";
+            this.BCajero.UseVisualStyleBackColor = true;
+            this.BCajero.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnCerrar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCerrar.ForeColor = System.Drawing.Color.Black;
+            this.BtnCerrar.Image = global::Farmacia__vida.Properties.Resources.apagar__1_1;
+            this.BtnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCerrar.Location = new System.Drawing.Point(919, 351);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(229, 86);
+            this.BtnCerrar.TabIndex = 0;
+            this.BtnCerrar.Text = "Cerrar sesión";
+            this.BtnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCerrar.UseVisualStyleBackColor = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
             // Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1438, 784);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar_Cliente);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.BCajero);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BtnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -199,14 +180,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button BtnCerrar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BCajero;
@@ -214,7 +193,6 @@
         private System.Windows.Forms.Button btnAgregar_Cliente;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }
